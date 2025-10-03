@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LastCity Launcher</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- 타이틀바 -->
+  <div class="titlebar">
+    <div class="titlebar-drag">
+      <span class="title">LASTCITY</span>
+    </div>
+    <div class="window-controls">
+      <button class="window-btn minimize" id="minimizeBtn">─</button>
+      <button class="window-btn close" id="closeBtn">✕</button>
+    </div>
+  </div>
+
+  <!-- 배경 이미지 -->
+  <div class="background-overlay"></div>
+
+  <!-- 메인 컨텐츠 -->
+  <div class="container">
+    <!-- 왼쪽 로고 영역 -->
+    <div class="logo-section">
+      <div class="logo-text">LC</div>
+      <p class="tagline">FiveM 기반의 롤플레이 서버</p>
+      <p class="description">RPG 요소를 더해 플레이어의 선택과 행동이<br>도시를 변화시키고, 새로운 커뮤니티 문화를 만들어갑니다.</p>
+    </div>
+
+    <!-- 오른쪽 컨텐츠 영역 -->
+    <div class="content-section">
+      <!-- 탭 버튼 -->
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="home">최근 소식</button>
+        <button class="tab-btn" data-tab="news">공지사항</button>
+      </div>
+
+      <!-- 홈 탭 -->
+      <div class="tab-content active" id="home-tab">
+        <div class="news-grid" id="newsGrid">
+          <!-- 뉴스 카드들이 여기에 동적으로 추가됩니다 -->
+        </div>
+      </div>
+
+      <!-- 공지사항 탭 -->
+      <div class="tab-content" id="news-tab">
+        <div class="announcements-list" id="announcementsList">
+          <div class="loading">공지사항을 불러오는 중...</div>
+        </div>
+      </div>
+
+      <!-- 하단 버튼 영역 -->
+      <div class="bottom-actions">
+        <button class="action-btn discord-btn" id="discordBtn">
+          <span>💬</span>
+          <span>디스코드</span>
+        </button>
+        <button class="action-btn guide-btn" id="guideBtn">
+          <span>📖</span>
+          <span>가이드</span>
+        </button>
+        <button class="action-btn launch-btn" id="launchBtn">
+          <span>▶</span>
+          <span>접속하기</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
