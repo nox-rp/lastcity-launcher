@@ -1,47 +1,62 @@
 {
-    "name": "lastcity-launcher",
-    "version": "1.0.1",
-    "description": "LastCity FiveM 게임 런처",
-    "main": "main.js",
-    "scripts": {
-      "start": "electron .",
-      "dev": "electron . --dev",
-      "build:win": "electron-builder --win",
-      "publish": "electron-builder --win --publish always"
+  "name": "lastcity-launcher",
+  "version": "1.0.1",
+  "description": "LastCity FiveM 게임 런처",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "build:win": "electron-builder --win",
+    "publish": "electron-builder --win --publish always"
+  },
+  "author": "LastCity",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "electron-updater": "^6.1.7"
+  },
+  "devDependencies": {
+    "electron": "^27.0.0",
+    "electron-builder": "^24.6.4"
+  },
+  "build": {
+    "appId": "com.lastcity.launcher",
+    "productName": "LastCity Launcher",
+    "directories": {
+      "output": "dist"
     },
-    "author": "LastCity",
-    "license": "MIT",
-    "dependencies": {
-      "axios": "^1.6.0",
-      "electron-updater": "^6.1.7"
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        },
+        {
+          "target": "msi",
+          "arch": ["x64"]
+        }
+      ],
+      "icon": "build/icon.ico",
+      "publisherName": "LastCity"
     },
-    "devDependencies": {
-      "electron": "^27.0.0",
-      "electron-builder": "^24.6.4"
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico",
+      "installerLanguages": ["ko_KR", "en_US"],
+      "language": "2066"
     },
-    "build": {
-      "appId": "com.lastcity.launcher",
-      "productName": "LastCity Launcher",
-      "directories": {
-        "output": "dist"
-      },
-      "win": {
-        "target": ["nsis"],
-        "icon": "build/icon.ico",
-        "publisherName": "LastCity"
-      },
-      "nsis": {
-        "oneClick": false,
-        "allowToChangeInstallationDirectory": true,
-        "createDesktopShortcut": true,
-        "createStartMenuShortcut": true,
-        "installerIcon": "build/icon.ico",
-        "uninstallerIcon": "build/icon.ico"
-      },
-      "publish": {
-        "provider": "github",
-        "owner": "YOUR_GITHUB_USERNAME",
-        "repo": "lastcity-launcher"
-      }
+    "msi": {
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    },
+    "publish": {
+      "provider": "github",
+      "owner": "nox-rp",
+      "repo": "lastcity-launcher"
     }
+  }
 }
