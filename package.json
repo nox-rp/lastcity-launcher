@@ -1,6 +1,6 @@
 {
     "name": "lastcity-launcher",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "LastCity FiveM 게임 런처",
     "main": "main.js",
     "scripts": {
@@ -44,4 +44,4 @@
         "repo": "lastcity-launcher"
       }
     }
-  }
+}
